@@ -1,4 +1,5 @@
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 const axiosLoklok = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BASE_URL_API,
@@ -6,7 +7,7 @@ const axiosLoklok = axios.create({
     lang: "en",
     versioncode: "11",
     clienttype: "ios_jike_default",
-    deviceid: Math.random().toString(36).slice(-8)
+    deviceid: uuidv4()
   }
 });
 
