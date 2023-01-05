@@ -67,8 +67,7 @@ export const getStaticProps: GetStaticProps = async () => {
   } catch (error) {
     return {
       props: { banners: [], initialHomeSections: [] },
-      revalidate: 60,
-      notFound: REVALIDATE_TIME.fail
+      revalidate: REVALIDATE_TIME.fail
     };
   }
 };

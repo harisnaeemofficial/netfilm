@@ -121,10 +121,16 @@ const ExplorePage = ({ filters }: ExplorePageProps) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const { data } = await axiosClient.get(`/api/category`, { params: query });
-  return {
-    props: { filters: data.filters }
-  };
+  try {
+    const { data } = await axiosClient.get(`/api/category`, { params: query });
+    return {
+      props: { filters: data.filters }
+    };
+  } catch (error) {
+    return {
+      props: { filters: [] }
+    };
+  }
 };
 
 export default ExplorePage;

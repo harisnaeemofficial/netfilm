@@ -58,9 +58,7 @@ async function getBanners() {
     const id = item.slice(item.indexOf('jumpParam:"') + 11, getPosition(item, ",", 4) - 1);
     const imageUrl = item.slice(item.indexOf("imgUrl:") + 8, item.indexOf('",'));
     const title = $(element).find(".footer-shadow").text();
-    const jumpType = item.slice(item.indexOf("jumpType:") + 9, item.indexOf("jumpType:") + 10);
-    console.log("jumpType:", jumpType);
-    banners.push({ id: Number(id), imageUrl, title, jumpType: jumpType === "d" ? 1 : 0 });
+    banners.push({ id: Number(id), imageUrl, title, jumpType: 1 });
   });
   return banners;
 }
