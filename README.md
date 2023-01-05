@@ -51,7 +51,7 @@ A Website To Watch HD Movies, Anime And TV Online For Free Using NextJS
 NEXT_PUBLIC_NODE_ENV = development (or production if deploy to vercel)
 NEXT_PUBLIC_BASE_URL_API = https://ga-mobile-api.loklok.tv/cms/app
 NEXT_PUBLIC_BASE_URL_API_SUB = https://mobile-api.netpop.app/cms/web/pc
-NEXT_PUBLIC_SERVER = https://net-film.vercel.app (Link vercel)
+NEXT_PUBLIC_VERCEL = https://net-film.vercel.app (Link vercel)
 NEXT_PUBLIC_LOCALHOST = http://localhost:3000
 
 # See: https://firebase.google.com
@@ -69,7 +69,7 @@ NEXT_PUBLIC_FIREBASE_APP_ID=
 - Go to Settings -> Functions -> Function Region -> Change the region to "Sydney, Australia"
 - Redeploy the project
 - #### If an error occurs npm ERR! code ERESOLVE, npm ERR! ERESOLVE unable to resolve dependency tree -> Change Install Command
-![Fix](https://user-images.githubusercontent.com/61537853/204084412-62207266-7082-48ed-bf42-1256b2073a28.png)
+  ![Fix](https://user-images.githubusercontent.com/61537853/204084412-62207266-7082-48ed-bf42-1256b2073a28.png)
 - See more: https://vercel.com/changelog/customizing-the-install-command-while-creating-projects
 
 ## Screenshots

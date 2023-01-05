@@ -21,7 +21,7 @@ export const checkTimeAgo = (timeCreated: number) => {
 export const randomDeviceId = () => {
   const hexCharacters = "0123456789abcdef";
   let deviceid = "";
-  for (let i = 0; i < 16; ++i) {
+  for (let i = 0; i < 32; ++i) {
     deviceid += hexCharacters.charAt(Math.floor(Math.random() * 16));
   }
   return deviceid;

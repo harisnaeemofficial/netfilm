@@ -68,11 +68,19 @@ const NewsPage = ({ initialNews }: NewsPageProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await axiosClient.get(`/api/news`);
-  return {
-    props: { initialNews: data.list },
-    revalidate: REVALIDATE_TIME.success
-  };
+  try {
+    const { data } = await axiosClient.get(`/api/news`);
+    return {
+      props: { initialNews: data.list },
+      revalidate: REVALIDATE_TIME.success
+    };
+  } catch (error) {
+    return {
+      props: { initialNews: [] },
+      revalidate: 60,
+      notFound: REVALIDATE_TIME.fail
+    };
+  }
 };
 
 export default NewsPage;

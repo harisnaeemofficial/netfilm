@@ -55,14 +55,22 @@ const HomePage = ({ banners, initialHomeSections }: HomePageProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await axiosClient.get(`/api/home`);
-  return {
-    props: {
-      banners: data.banners,
-      initialHomeSections: data.homeSections
-    },
-    revalidate: REVALIDATE_TIME.success
-  };
+  try {
+    const { data } = await axiosClient.get(`/api/home`);
+    return {
+      props: {
+        banners: data.banners,
+        initialHomeSections: data.homeSections
+      },
+      revalidate: REVALIDATE_TIME.success
+    };
+  } catch (error) {
+    return {
+      props: { banners: [], initialHomeSections: [] },
+      revalidate: 60,
+      notFound: REVALIDATE_TIME.fail
+    };
+  }
 };
 
 export default HomePage;

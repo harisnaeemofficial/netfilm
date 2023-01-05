@@ -4,10 +4,11 @@ import axiosClient from "configs/axiosClient";
 import { LayoutPrimary } from "layouts/LayoutPrimary";
 import { MovieCard } from "modules/MovieCard";
 import { MovieList } from "modules/MovieList";
-import { GetServerSidePropsContext } from "next";
+import { GetServerSidePropsContext, GetStaticPaths, GetStaticProps } from "next";
 import { Image } from "components/Image";
 import styles from "styles/star.module.scss";
 import { Meta } from "components/Meta";
+import { REVALIDATE_TIME } from "constants/global";
 
 interface StarInfoPageProps {
   data: IStarInfo;
@@ -52,11 +53,27 @@ const StarInfoPage = ({ data }: StarInfoPageProps) => {
   );
 };
 
-export const getServerSideProps = async ({ query }: GetServerSidePropsContext) => {
-  const { data } = await axiosClient.get(`/api/star`, { params: query });
+export const getStaticPaths: GetStaticPaths = () => {
   return {
-    props: { data }
+    paths: [],
+    fallback: "blocking"
   };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  try {
+    const { data } = await axiosClient.get(`/api/star`, { params });
+    return {
+      props: { data },
+      revalidate: REVALIDATE_TIME.success
+    };
+  } catch (error) {
+    return {
+      props: {},
+      revalidate: REVALIDATE_TIME.fail,
+      notFound: true
+    };
+  }
 };
 
 export default StarInfoPage;
