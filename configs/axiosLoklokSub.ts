@@ -1,4 +1,5 @@
 import axios from "axios";
+import { randomDeviceId } from "utils/helper";
 
 const axiosLoklokSub = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BASE_URL_API_SUB,
@@ -6,7 +7,7 @@ const axiosLoklokSub = axios.create({
     lang: "en",
     versioncode: "11",
     clienttype: "ios_jike_default",
-    deviceid: Math.random().toString(36).slice(-8)
+    deviceid: randomDeviceId()
   }
 });
 
