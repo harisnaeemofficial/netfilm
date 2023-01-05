@@ -1,22 +1,27 @@
 import axios from "axios";
 import { randomDeviceId } from "utils/helper";
 
-const headers = {
-  lang: "en",
-  versioncode: "11",
-  clienttype: "ios_jike_default",
-  deviceid: randomDeviceId()
-};
-
 const axiosLoklok = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BASE_URL_API,
-  headers
+  headers: {
+    lang: "en",
+    versioncode: "11",
+    clienttype: "ios_jike_default",
+    deviceid: randomDeviceId()
+  }
 });
 
 axiosLoklok.interceptors.request.use(
   async (config) => {
-    const customConfig = { ...config, headers };
-    console.log("customConfig: ", customConfig);
+    const customConfig = {
+      ...config,
+      headers: {
+        lang: "en",
+        versioncode: "11",
+        clienttype: "ios_jike_default",
+        deviceid: randomDeviceId()
+      }
+    };
     return customConfig;
   },
   (err) => {
