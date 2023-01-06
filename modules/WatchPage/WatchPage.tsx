@@ -1,20 +1,22 @@
-import { IEpisode } from "@types";
+import { IEpisode, IHistoryView } from "@types";
 import Meta from "components/Meta";
 import { resizeImageLoklok } from "constants/global";
-import useSaveHistoryView from "hooks/useSaveHistoryView";
+import { LocalStorage } from "constants/localStorage";
+import { v4 as uuidv4 } from "uuid";
 import LayoutPrimary from "layouts/LayoutPrimary";
 import CommentList from "modules/CommentList";
 import MediaPlayer from "modules/MediaPlayer";
 import MovieCard from "modules/MovieCard";
 import MovieList from "modules/MovieList";
-import { RelatedSeries } from "modules/RelatedSeries";
+import RelatedSeries from "modules/RelatedSeries";
 import WatchActions from "modules/WatchActions";
-import { WatchAnthology } from "modules/WatchAnthology";
-import { WatchCategory } from "modules/WatchCategory";
+import WatchAnthology from "modules/WatchAnthology";
+import WatchCategory from "modules/WatchCategory";
 import WatchMeta from "modules/WatchMeta";
 import WatchStar from "modules/WatchStar";
 import WatchSummary from "modules/WatchSummary";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { SyntheticEvent, useCallback, useEffect, useState } from "react";
 import styles from "styles/watch.module.scss";
 import classNames from "utils/classNames";
 
@@ -23,8 +25,59 @@ interface WatchMainProps {
 }
 
 const WatchMain = ({ data }: WatchMainProps) => {
-  useSaveHistoryView(data);
+  const router = useRouter();
+  const { id, category, episode } = router.query;
   const [mounted, setMounted] = useState(false);
+  const handleSaveProgressHistory = (e: SyntheticEvent<HTMLVideoElement>) => {
+    const node = e.target as HTMLVideoElement;
+    if (isNaN(node.duration)) return;
+    let cloneHistoryLS: IHistoryView[] = JSON.parse(
+      localStorage.getItem(LocalStorage.history) || "[]"
+    );
+    const foundWatchedMovieIndex = cloneHistoryLS.findIndex((history) => {
+      return history.id === id && history.episode === data.episode;
+    });
+    const percentProgress = (node.currentTime / node.duration) * 100;
+    if (foundWatchedMovieIndex === -1) return;
+    cloneHistoryLS[foundWatchedMovieIndex].currentTime = node.currentTime;
+    cloneHistoryLS[foundWatchedMovieIndex].totalDuration = node.duration;
+    cloneHistoryLS[foundWatchedMovieIndex].progress = percentProgress;
+    localStorage.setItem(LocalStorage.history, JSON.stringify(cloneHistoryLS));
+  };
+  useEffect(() => {
+    if (!data) return;
+    let historyLS: IHistoryView[] = JSON.parse(localStorage.getItem(LocalStorage.history) || "[]");
+    if (historyLS.length >= 30) {
+      historyLS = historyLS.slice(0, 30);
+    }
+    const foundMovieIndex = historyLS.findIndex(
+      (movie) => movie.id === id && movie.episode === data.episode
+    );
+    if (foundMovieIndex !== -1) {
+      const cloneFoundMovie = historyLS[foundMovieIndex];
+      cloneFoundMovie.progress = 0;
+      cloneFoundMovie.currentTime = 0;
+      historyLS.splice(foundMovieIndex, 1);
+      historyLS.unshift(cloneFoundMovie);
+      localStorage.setItem(LocalStorage.history, JSON.stringify(historyLS));
+      return;
+    }
+    const history = {
+      key: uuidv4(),
+      id: data.id,
+      category: category as string,
+      name: data.name,
+      coverVerticalUrl: data.coverVerticalUrl,
+      coverHorizontalUrl: data.coverHorizontalUrl,
+      episode: data.episode,
+      episodeName: data.currentEpName,
+      currentEpName: data.currentEpName,
+      totalDuration: data.totalDuration,
+      progress: 0,
+      currentTime: 0
+    };
+    localStorage.setItem(LocalStorage.history, JSON.stringify([history, ...historyLS]));
+  }, [data, id, category, episode]);
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -51,6 +104,7 @@ const WatchMain = ({ data }: WatchMainProps) => {
               qualities={data.qualities}
               subtitles={data.subtitles}
               poster={data.coverHorizontalUrl}
+              onProgress={handleSaveProgressHistory}
             />
             <h1 className={styles.heading}>
               {data.name} {data.currentEpName && `- ${data.currentEpName}`}

@@ -1,3 +1,3 @@
 import WatchCategory from "./WatchCategory";
 
-export { WatchCategory };
+export default WatchCategory;

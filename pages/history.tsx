@@ -3,22 +3,26 @@ import { IconEmptyHistory, IconTrash } from "components/Icons";
 import { Image } from "components/Image";
 import Meta from "components/Meta";
 import WrapLink from "components/WrapLink";
+import { LocalStorage } from "constants/localStorage";
 import { PATH } from "constants/path";
 import LayoutPrimary from "layouts/LayoutPrimary";
 import { MovieListSkeleton } from "modules/MovieSkeleton";
 import MovieTitle from "modules/MovieTitle";
 import { useEffect, useState } from "react";
 import styles from "styles/history.module.scss";
+import { formatTimeDuration } from "utils/helper";
 
 const HistoryPage = () => {
   const [loading, setLoading] = useState(true);
   const [history, setHistory] = useState<IHistoryView[]>([]);
   const handleClearHistory = () => {
-    localStorage.removeItem("history");
+    localStorage.removeItem(LocalStorage.history);
     setHistory([]);
   };
   useEffect(() => {
-    const historyLocalStorage = JSON.parse(localStorage.getItem("history") || "[]");
+    const historyLocalStorage: IHistoryView[] = JSON.parse(
+      localStorage.getItem(LocalStorage.history) || "[]"
+    );
     setHistory(historyLocalStorage);
     setLoading(false);
   }, []);
@@ -51,6 +55,15 @@ const HistoryPage = () => {
                           src={movie.coverHorizontalUrl}
                           className={styles.movieCardPoster}
                         />
+                        <span className={styles.totalDuration}>
+                          {formatTimeDuration(Number(movie.totalDuration.toFixed()))}
+                        </span>
+                        <div className={styles.progress}>
+                          <div
+                            className={styles.currentTime}
+                            style={{ width: `${movie.progress.toFixed()}%` }}
+                          ></div>
+                        </div>
                         <picture>
                           <img src="/icon-play.png" alt="play" className={styles.movieCardPlay} />
                         </picture>

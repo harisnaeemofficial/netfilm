@@ -108,7 +108,10 @@ export interface IHistoryView {
   coverHorizontalUrl: string;
   episode: number;
   episodeName: number;
-  currentEpName: string;
+  currentEpName: number;
+  progress: number;
+  totalDuration: number;
+  currentTime: number;
 }
 
 export interface IMovieCard {

@@ -8,7 +8,6 @@ export const checkTimeAgo = (timeCreated: number) => {
     minute: 60 * 1000
   };
   let diff = Date.now() - new Date(timeCreated).getTime();
-
   for (const key in periods) {
     if (diff >= periods[key]) {
       let result = Math.floor(diff / periods[key]);
@@ -25,4 +24,14 @@ export const randomDeviceId = () => {
     deviceid += hexCharacters.charAt(Math.floor(Math.random() * 16));
   }
   return deviceid;
+};
+
+export const formatTimeDuration = (totalDuration: number) => {
+  const hours = Math.floor(totalDuration / 3600);
+  const minutes = Math.floor(totalDuration / 60) % 60;
+  const seconds = totalDuration % 60;
+  return [hours, minutes, seconds]
+    .map((v) => (v < 10 ? "0" + v : v))
+    .filter((v, i) => v !== "00" || i > 0)
+    .join(":");
 };

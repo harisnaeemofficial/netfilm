@@ -1,3 +1,3 @@
 import RelatedSeries from "./RelatedSeries";
 
-export { RelatedSeries };
+export default RelatedSeries;

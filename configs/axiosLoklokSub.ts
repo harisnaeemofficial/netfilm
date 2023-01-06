@@ -7,7 +7,9 @@ const axiosLoklokSub = axios.create({
     lang: "en",
     versioncode: "11",
     clienttype: "ios_jike_default",
-    deviceid: randomDeviceId()
+    deviceid: randomDeviceId(),
+    "user-agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36 OPR/84.0.4316.52"
   }
 });
 

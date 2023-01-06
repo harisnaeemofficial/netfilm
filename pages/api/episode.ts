@@ -34,9 +34,11 @@ const getEpisodeApi = async (req: NextApiRequest, res: NextApiResponse) => {
     };
     return await axiosLoklok.get(PATH_API.media, { params });
   };
+  let totalDuration = 0;
   const qualities = await Promise.all(
     definitionList.map(async (definition) => {
       const { data } = await getEpisode(definition.code);
+      totalDuration = data.totalDuration;
       return {
         quality: Number(definition.description.replace(/[\p\P]/g, "")),
         url: data.mediaUrl.replace(/^http:\/\//i, "https://")
@@ -61,6 +63,7 @@ const getEpisodeApi = async (req: NextApiRequest, res: NextApiResponse) => {
     message: `Get info episode ${currentEpisode?.seriesNo} of ${movieDetails.name} successfully!`,
     data: {
       ...movieDetails,
+      totalDuration: totalDuration || 0,
       currentEpName: movieDetails.episodeVo.length === 1 ? "" : `Ep ${currentEpisode?.seriesNo}`,
       qualities,
       subtitles,

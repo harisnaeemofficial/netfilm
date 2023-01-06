@@ -1,3 +1,3 @@
 import WatchAnthology from "./WatchAnthology";
 
-export { WatchAnthology };
+export default WatchAnthology;

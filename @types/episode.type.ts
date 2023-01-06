@@ -77,6 +77,7 @@ export interface IEpisode {
   tagList: IObjIdName[];
   tagNameList: string[];
   translateType: number;
+  totalDuration: number;
   upInfo: {
     upId: number;
     upImgUrl: string;
