@@ -1,7 +1,7 @@
 import { IDiscovery } from "@types";
-import { WrapLink } from "components/WrapLink";
+import WrapLink from "components/WrapLink";
 import { IconHeart, IconShare } from "components/Icons";
-import { LoadingSpinner } from "components/Loading";
+import LoadingSpinner from "components/LoadingSpinner";
 import { PATH } from "constants/path";
 import useElementOnScreen from "hooks/useElementOnScreen";
 import dynamic from "next/dynamic";

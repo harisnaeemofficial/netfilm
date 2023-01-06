@@ -1,4 +1,4 @@
-import { ImageUpload } from "components/ImageUpload";
+import ImageUpload from "components/ImageUpload";
 import { defaultAvatar } from "constants/global";
 import { doc, updateDoc } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from "firebase/storage";

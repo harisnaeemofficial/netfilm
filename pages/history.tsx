@@ -1,14 +1,14 @@
 import { IHistoryView } from "@types";
-import { WrapLink } from "components/WrapLink";
-import { PATH } from "constants/path";
-import { LayoutPrimary } from "layouts/LayoutPrimary";
-import { MovieListSkeleton } from "modules/MovieSkeleton";
-import { MovieTitle } from "modules/MovieTitle";
+import { IconEmptyHistory, IconTrash } from "components/Icons";
 import { Image } from "components/Image";
+import Meta from "components/Meta";
+import WrapLink from "components/WrapLink";
+import { PATH } from "constants/path";
+import LayoutPrimary from "layouts/LayoutPrimary";
+import { MovieListSkeleton } from "modules/MovieSkeleton";
+import MovieTitle from "modules/MovieTitle";
 import { useEffect, useState } from "react";
 import styles from "styles/history.module.scss";
-import { Meta } from "components/Meta";
-import { IconEmptyHistory, IconTrash } from "components/Icons";
 
 const HistoryPage = () => {
   const [loading, setLoading] = useState(true);

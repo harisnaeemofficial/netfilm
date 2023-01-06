@@ -1,4 +1,4 @@
-import { WrapLink } from "components/WrapLink";
+import WrapLink from "components/WrapLink";
 import { Icon404 } from "components/Icons";
 import { PATH } from "constants/path";
 import React, { Component, ErrorInfo } from "react";

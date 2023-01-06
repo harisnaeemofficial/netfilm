@@ -1,9 +1,9 @@
 import { IMovieCard } from "@types";
-import { WrapLink } from "components/WrapLink";
+import WrapLink from "components/WrapLink";
 import { Image } from "components/Image";
 import { IMAGE_SIZE, resizeImageLoklok } from "constants/global";
 import { PATH } from "constants/path";
-import { MovieTitle } from "modules/MovieTitle";
+import MovieTitle from "modules/MovieTitle";
 import styles from "./movieCard.module.scss";
 
 const MovieCard = ({ id, domainType, title, poster }: IMovieCard) => {

@@ -1,3 +1,3 @@
 import WrapLink from "./WrapLink";
 
-export { WrapLink };
+export default WrapLink;

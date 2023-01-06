@@ -1,3 +1,3 @@
 import WatchStar from "./WatchStar";
 
-export { WatchStar };
+export default WatchStar;

@@ -1,3 +1,3 @@
 import CommentEdit from "./CommentEdit";
 
-export { CommentEdit };
+export default CommentEdit;

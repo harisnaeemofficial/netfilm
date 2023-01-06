@@ -1,5 +1,5 @@
 import { IObjIdName } from "@types";
-import { WrapLink } from "components/WrapLink";
+import WrapLink from "components/WrapLink";
 import { PATH } from "constants/path";
 import styles from "./watchCategory.module.scss";
 

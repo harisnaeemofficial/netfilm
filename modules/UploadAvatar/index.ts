@@ -1,3 +1,3 @@
 import UploadAvatar from "./UploadAvatar";
 
-export { UploadAvatar };
+export default UploadAvatar;

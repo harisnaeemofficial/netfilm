@@ -2,7 +2,7 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IBanner } from "@types";
 import styles from "./homeBanner.module.scss";
-import { WrapLink } from "components/WrapLink";
+import WrapLink from "components/WrapLink";
 import { PATH } from "constants/path";
 import { Image } from "components/Image";
 import { IMAGE_SIZE, resizeImageLoklok } from "constants/global";

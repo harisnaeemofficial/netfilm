@@ -1,3 +1,3 @@
 import HomeSection from "./HomeSection";
 
-export { HomeSection };
+export default HomeSection;

@@ -1,13 +1,13 @@
 import { IStarInfo } from "@types";
-import { TextToggleMore } from "components/Text";
+import TextToggleMore from "components/TextToggleMore";
 import axiosClient from "configs/axiosClient";
-import { LayoutPrimary } from "layouts/LayoutPrimary";
-import { MovieCard } from "modules/MovieCard";
-import { MovieList } from "modules/MovieList";
+import LayoutPrimary from "layouts/LayoutPrimary";
+import MovieCard from "modules/MovieCard";
+import MovieList from "modules/MovieList";
 import { GetServerSidePropsContext, GetStaticPaths, GetStaticProps } from "next";
 import { Image } from "components/Image";
 import styles from "styles/star.module.scss";
-import { Meta } from "components/Meta";
+import Meta from "components/Meta";
 import { REVALIDATE_TIME } from "constants/global";
 
 interface StarInfoPageProps {

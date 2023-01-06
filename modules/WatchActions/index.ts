@@ -1,3 +1,3 @@
 import WatchActions from "./WatchActions";
 
-export { WatchActions };
+export default WatchActions;

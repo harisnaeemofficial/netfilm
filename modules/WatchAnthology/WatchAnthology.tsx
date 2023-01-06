@@ -1,5 +1,5 @@
 import { IconPlay } from "components/Icons";
-import { WrapLink } from "components/WrapLink";
+import WrapLink from "components/WrapLink";
 import { PATH } from "constants/path";
 import { useRouter } from "next/router";
 import { IEpisode } from "@types";

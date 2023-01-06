@@ -1,4 +1,4 @@
-import { MovieList } from "modules/MovieList";
+import MovieList from "modules/MovieList";
 import MovieSkeleton from "./MovieSkeleton";
 import styles from "./movieSkeleton.module.scss";
 

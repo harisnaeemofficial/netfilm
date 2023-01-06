@@ -13,13 +13,15 @@ const axiosLoklok = axios.create({
 
 axiosLoklok.interceptors.request.use(
   async (config) => {
+    const deviceId = randomDeviceId();
     const customConfig = {
       ...config,
       headers: {
         lang: "en",
         versioncode: "11",
         clienttype: "ios_jike_default",
-        deviceid: randomDeviceId()
+        deviceid: deviceId,
+        sign: deviceId
       }
     };
     return customConfig;

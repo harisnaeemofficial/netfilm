@@ -1,9 +1,9 @@
 import { CheckLoggedIn } from "components/Authentication";
-import { WrapLink } from "components/WrapLink";
-import { FormGroup } from "components/FormGroup";
-import { Input } from "components/Input";
-import { Label } from "components/Label";
-import { Meta } from "components/Meta";
+import WrapLink from "components/WrapLink";
+import FormGroup from "components/FormGroup";
+import Input from "components/Input";
+import Label from "components/Label";
+import Meta from "components/Meta";
 import { PATH } from "constants/path";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "libs/firebase-app";

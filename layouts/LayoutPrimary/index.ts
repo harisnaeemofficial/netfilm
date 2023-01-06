@@ -1,3 +1,3 @@
 import LayoutPrimary from "./LayoutPrimary";
 
-export { LayoutPrimary };
+export default LayoutPrimary;

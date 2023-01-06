@@ -1,3 +1,3 @@
 import MediaPlayer from "./MediaPlayer";
 
-export { MediaPlayer };
+export default MediaPlayer;

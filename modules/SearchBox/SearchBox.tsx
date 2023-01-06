@@ -1,4 +1,4 @@
-import { WrapLink } from "components/WrapLink";
+import WrapLink from "components/WrapLink";
 import { IconSearch } from "components/Icons";
 import axiosClient from "configs/axiosClient";
 import { PATH } from "constants/path";

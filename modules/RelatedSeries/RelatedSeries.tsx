@@ -1,5 +1,5 @@
 import { IRefItem } from "@types";
-import { WrapLink } from "components/WrapLink";
+import WrapLink from "components/WrapLink";
 import { PATH } from "constants/path";
 import { Image } from "components/Image";
 import styles from "./relatedSeries.module.scss";

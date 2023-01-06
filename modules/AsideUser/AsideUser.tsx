@@ -1,4 +1,4 @@
-import { WrapLink } from "components/WrapLink";
+import WrapLink from "components/WrapLink";
 import { IconFollow, IconKeyPassword, IconLogout, IconUser } from "components/Icons";
 import { Image } from "components/Image";
 import { defaultAvatar } from "constants/global";

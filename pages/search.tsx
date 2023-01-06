@@ -1,10 +1,10 @@
 import { IMovieSearch } from "@types";
-import { Meta } from "components/Meta";
+import Meta from "components/Meta";
 import axiosClient from "configs/axiosClient";
-import { LayoutPrimary } from "layouts/LayoutPrimary";
-import { MovieCard } from "modules/MovieCard";
-import { MovieList } from "modules/MovieList";
-import { SearchBox } from "modules/SearchBox";
+import LayoutPrimary from "layouts/LayoutPrimary";
+import MovieCard from "modules/MovieCard";
+import MovieList from "modules/MovieList";
+import SearchBox from "modules/SearchBox";
 import { GetServerSideProps } from "next";
 
 interface SearchPageProps {

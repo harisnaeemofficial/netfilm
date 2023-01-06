@@ -1,3 +1,3 @@
 import WatchMeta from "./WatchMeta";
 
-export { WatchMeta };
+export default WatchMeta;

@@ -1,3 +1,3 @@
 import TextToggleMore from "./TextToggleMore";
 
-export { TextToggleMore };
+export default TextToggleMore;

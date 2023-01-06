@@ -1,3 +1,3 @@
 import DiscoveryCard from "./DiscoveryCard";
 
-export { DiscoveryCard };
+export default DiscoveryCard;

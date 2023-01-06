@@ -1,3 +1,3 @@
 import FormGroup from "./FromGroup";
 
-export { FormGroup };
+export default FormGroup;

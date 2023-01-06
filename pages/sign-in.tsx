@@ -1,10 +1,10 @@
 import { CheckLoggedIn } from "components/Authentication";
-import { WrapLink } from "components/WrapLink";
-import { FormGroup } from "components/FormGroup";
-import { Input } from "components/Input";
-import { InputPassword } from "components/InputPassword";
-import { Label } from "components/Label";
-import { Meta } from "components/Meta";
+import WrapLink from "components/WrapLink";
+import FormGroup from "components/FormGroup";
+import Input from "components/Input";
+import InputPassword from "components/InputPassword";
+import Label from "components/Label";
+import Meta from "components/Meta";
 import { PATH } from "constants/path";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import useInputChange from "hooks/useInputChange";

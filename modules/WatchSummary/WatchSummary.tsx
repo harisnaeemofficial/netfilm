@@ -1,4 +1,4 @@
-import { TextToggleMore } from "components/Text";
+import TextToggleMore from "components/TextToggleMore";
 import styles from "./watchSummary.module.scss";
 
 interface WatchSummaryProps {

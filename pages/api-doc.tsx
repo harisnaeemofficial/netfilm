@@ -1,4 +1,4 @@
-import { Meta } from "components/Meta";
+import Meta from "components/Meta";
 import { server } from "configs/server";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { createSwaggerSpec } from "next-swagger-doc";

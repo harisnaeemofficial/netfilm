@@ -1,9 +1,9 @@
 import { INewsCard } from "@types";
-import { Meta } from "components/Meta";
+import Meta from "components/Meta";
 import axiosClient from "configs/axiosClient";
 import { REVALIDATE_TIME } from "constants/global";
-import { LayoutPrimary } from "layouts/LayoutPrimary";
-import { CheckInView } from "modules/CheckInView";
+import LayoutPrimary from "layouts/LayoutPrimary";
+import CheckInView from "modules/CheckInView";
 import { NewsCard } from "modules/NewsCard";
 import { NewsList, NewsListSkeleton } from "modules/NewsList";
 import { GetServerSidePropsContext, GetStaticProps } from "next";

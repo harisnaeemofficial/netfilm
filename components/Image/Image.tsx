@@ -1,4 +1,4 @@
-import { CheckInView } from "modules/CheckInView";
+import CheckInView from "modules/CheckInView";
 import { FC, HTMLProps, useEffect, useRef, useState } from "react";
 
 interface ImageProps {

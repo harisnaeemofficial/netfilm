@@ -1,11 +1,11 @@
 import { ICategoryResult, IFilter, IFilterOptions } from "@types";
-import { Dropdown } from "components/Dropdown";
-import { Meta } from "components/Meta";
+import Dropdown from "components/Dropdown";
+import Meta from "components/Meta";
 import axiosClient from "configs/axiosClient";
-import { LayoutPrimary } from "layouts/LayoutPrimary";
-import { CheckInView } from "modules/CheckInView";
-import { MovieCard } from "modules/MovieCard";
-import { MovieList } from "modules/MovieList";
+import LayoutPrimary from "layouts/LayoutPrimary";
+import CheckInView from "modules/CheckInView";
+import MovieCard from "modules/MovieCard";
+import MovieList from "modules/MovieList";
 import { MovieListSkeleton } from "modules/MovieSkeleton";
 import { GetServerSideProps } from "next";
 import queryString from "query-string";

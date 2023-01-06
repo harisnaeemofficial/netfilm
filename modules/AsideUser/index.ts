@@ -1,3 +1,3 @@
 import AsideUser from "./AsideUser";
 
-export { AsideUser };
+export default AsideUser;

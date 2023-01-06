@@ -1,3 +1,3 @@
 import HomeBanner from "./HomeBanner";
 
-export { HomeBanner };
+export default HomeBanner;

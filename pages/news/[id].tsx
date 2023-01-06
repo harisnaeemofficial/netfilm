@@ -1,9 +1,9 @@
 import { INewsDetails } from "@types";
-import { Meta } from "components/Meta";
+import Meta from "components/Meta";
 import axiosClient from "configs/axiosClient";
 import { REVALIDATE_TIME } from "constants/global";
 import { PATH } from "constants/path";
-import { LayoutPrimary } from "layouts/LayoutPrimary";
+import LayoutPrimary from "layouts/LayoutPrimary";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useEffect } from "react";
 import styles from "styles/news.module.scss";

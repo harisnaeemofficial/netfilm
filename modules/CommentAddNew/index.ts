@@ -1,3 +1,3 @@
 import CommentAddNew from "./CommentAddNew";
 
-export { CommentAddNew };
+export default CommentAddNew;

@@ -1,3 +1,3 @@
 import CheckInView from "./CheckInView";
 
-export { CheckInView };
+export default CheckInView;

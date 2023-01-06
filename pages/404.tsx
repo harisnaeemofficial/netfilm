@@ -1,5 +1,5 @@
-import { Meta } from "components/Meta";
-import { WrapLink } from "components/WrapLink";
+import Meta from "components/Meta";
+import WrapLink from "components/WrapLink";
 import { PATH } from "constants/path";
 import styles from "styles/page404.module.scss";
 import classNames from "utils/classNames";

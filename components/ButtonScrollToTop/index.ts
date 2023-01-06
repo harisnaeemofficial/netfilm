@@ -1,3 +1,3 @@
 import ButtonScrollToTop from "./ButtonScrollToTop";
 
-export { ButtonScrollToTop };
+export default ButtonScrollToTop;

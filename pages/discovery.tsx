@@ -1,10 +1,10 @@
 import { IDiscovery } from "@types";
-import { LoadingSpinner } from "components/Loading";
-import { Meta } from "components/Meta";
+import LoadingSpinner from "components/LoadingSpinner";
+import Meta from "components/Meta";
 import axiosClient from "configs/axiosClient";
-import { LayoutPrimary } from "layouts/LayoutPrimary";
-import { CheckInView } from "modules/CheckInView";
-import { DiscoveryCard } from "modules/DiscoveryCard";
+import LayoutPrimary from "layouts/LayoutPrimary";
+import CheckInView from "modules/CheckInView";
+import DiscoveryCard from "modules/DiscoveryCard";
 import { GetServerSideProps } from "next";
 import { useCallback } from "react";
 import useSWRInfinite from "swr/infinite";

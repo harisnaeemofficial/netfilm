@@ -1,3 +1,3 @@
 import WatchSummary from "./WatchSummary";
 
-export { WatchSummary };
+export default WatchSummary;

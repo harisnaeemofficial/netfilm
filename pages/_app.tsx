@@ -1,11 +1,10 @@
 import { Authentication } from "components/Authentication";
-import { ButtonScrollToTop } from "components/ButtonScrollToTop";
+import ButtonScrollToTop from "components/ButtonScrollToTop";
 import { ErrorBoundary } from "components/ErrorBoundary";
-import { Meta } from "components/Meta";
+import Meta from "components/Meta";
 import type { AppProps } from "next/app";
 import Router from "next/router";
 import NProgress from "nprogress";
-import "nprogress/nprogress.css";
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import Modal from "react-modal";
@@ -15,6 +14,7 @@ import "styles/global.scss";
 import "styles/reset.scss";
 import "swiper/css";
 import "swiper/css/navigation";
+import "nprogress/nprogress.css";
 
 Modal.setAppElement("#__next");
 Modal.defaultStyles = {

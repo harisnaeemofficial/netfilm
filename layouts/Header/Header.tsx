@@ -1,8 +1,8 @@
-import { WrapLink } from "components/WrapLink";
+import WrapLink from "components/WrapLink";
 import { IconClose, IconMenu, IconSearch } from "components/Icons";
 import { defaultAvatar } from "constants/global";
 import { PATH } from "constants/path";
-import { SearchBox } from "modules/SearchBox";
+import SearchBox from "modules/SearchBox";
 import { useRef } from "react";
 import { useAppSelector } from "store/global-store";
 import classNames from "utils/classNames";

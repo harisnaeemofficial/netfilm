@@ -1,5 +1,5 @@
 import { CheckAdmin } from "components/Authentication";
-import { WrapLink } from "components/WrapLink";
+import WrapLink from "components/WrapLink";
 import { PATH } from "constants/path";
 import { HTMLAttributes } from "react";
 import styles from "./layoutDashboard.module.scss";
