@@ -1,5 +1,5 @@
 import { Image } from "components/Image";
-import TextArea from "components/TextArea";
+import TextArea from "components/TextAreaBox";
 import { defaultAvatar } from "constants/global";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "libs/firebase-app";

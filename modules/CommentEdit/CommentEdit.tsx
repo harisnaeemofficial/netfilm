@@ -1,5 +1,5 @@
 import { IComment } from "@types";
-import TextArea from "components/TextArea";
+import TextArea from "components/TextAreaBox";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "libs/firebase-app";
 import { FormEvent, useState } from "react";
