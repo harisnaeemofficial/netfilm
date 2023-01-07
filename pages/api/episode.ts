@@ -63,6 +63,12 @@ const getEpisodeApi = async (req: NextApiRequest, res: NextApiResponse) => {
     message: `Get info episode ${currentEpisode?.seriesNo} of ${movieDetails.name} successfully!`,
     data: {
       ...movieDetails,
+      episodeVo: movieDetails.episodeVo.map((ep) => {
+        return {
+          id: ep.id,
+          seriesNo: ep.seriesNo
+        };
+      }),
       totalDuration: totalDuration || 0,
       currentEpName: movieDetails.episodeVo.length === 1 ? "" : `Ep ${currentEpisode?.seriesNo}`,
       qualities,

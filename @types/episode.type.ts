@@ -62,7 +62,7 @@ export interface IEpisode {
   };
   episodeCount: number;
   episodeRoomListVo: IEpisodeRoom;
-  episodeVo: IEpisodeVo[];
+  episodeVo: { id: number; seriesNo: number }[];
   id: string;
   introduction: string;
   likeList: ILikeMovie[];

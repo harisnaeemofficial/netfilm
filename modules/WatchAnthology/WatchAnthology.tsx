@@ -15,7 +15,7 @@ const WatchAnthology = ({ detailMovie }: WatchAnthologyProps) => {
   if (detailMovie.episodeVo.length <= 1) return null;
   return (
     <div className={styles.anthology}>
-      {detailMovie.episodeVo.map(({ seriesNo, id }: any) => {
+      {detailMovie.episodeVo.map(({ seriesNo, id }) => {
         const href = `${PATH.watch}/${detailMovie.category}/${detailMovie.id}/${id}`;
         const active = id === Number(episode);
         return (

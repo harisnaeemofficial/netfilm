@@ -1,9 +1,10 @@
+import { IEpisodeVo } from "@types";
+import axiosLoklok from "configs/axiosLoklok";
+import { PATH_API } from "configs/path.api";
 import { STATUS } from "constants/status";
 import type { NextApiRequest, NextApiResponse } from "next";
-import axiosLoklok from "configs/axiosLoklok";
 import catchAsync from "utils/catch-async";
 import { ApiError, responseError, responseSuccess } from "utils/response";
-import { PATH_API } from "configs/path.api";
 
 const getMovieDetailsPageApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method, query } = req;
@@ -18,7 +19,13 @@ const getMovieDetailsPageApi = async (req: NextApiRequest, res: NextApiResponse)
   }
   const response = {
     message: `Get details ${data.name} successfully!`,
-    data
+    data: {
+      ...data,
+      episodeVo: data.episodeVo.map((ep: IEpisodeVo) => ({
+        id: ep.id,
+        seriesNo: ep.seriesNo
+      }))
+    }
   };
   responseSuccess(res, response);
 };

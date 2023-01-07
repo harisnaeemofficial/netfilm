@@ -17,10 +17,10 @@ export const checkTimeAgo = (timeCreated: number) => {
   return "Just now";
 };
 
-export const randomDeviceId = () => {
+export const randomDeviceId = (length = 16) => {
   const hexCharacters = "0123456789abcdef";
   let deviceid = "";
-  for (let i = 0; i < 32; ++i) {
+  for (let i = 0; i < length; ++i) {
     deviceid += hexCharacters.charAt(Math.floor(Math.random() * 16));
   }
   return deviceid;

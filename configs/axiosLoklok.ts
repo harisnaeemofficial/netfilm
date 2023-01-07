@@ -7,7 +7,7 @@ const axiosLoklok = axios.create({
     lang: "en",
     versioncode: "11",
     clienttype: "ios_jike_default",
-    deviceid: randomDeviceId(),
+    deviceid: randomDeviceId(16),
     "user-agent":
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36 OPR/84.0.4316.52"
   }
@@ -15,19 +15,19 @@ const axiosLoklok = axios.create({
 
 axiosLoklok.interceptors.request.use(
   async (config) => {
-    const deviceId = randomDeviceId();
     const customConfig = {
       ...config,
       headers: {
         lang: "en",
         versioncode: "11",
         clienttype: "ios_jike_default",
-        deviceid: deviceId,
-        sign: deviceId,
+        deviceid: randomDeviceId(16),
+        sign: randomDeviceId(32),
         "user-agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36 OPR/84.0.4316.52"
       }
     };
+    console.log("customConfig: ", customConfig.headers);
     return customConfig;
   },
   (err) => {
