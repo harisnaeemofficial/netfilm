@@ -43,6 +43,7 @@ export interface IMovieDetailsLoklok {
   areaList: IObjIdName[];
   collect: boolean;
   category: number;
+  contentTagResourceList: any[];
   coverHorizontalUrl: string;
   coverHorizontalUrlJson: string;
   coverVerticalUrl: string;
@@ -69,7 +70,7 @@ export interface IMovieDetailsLoklok {
   year: number;
 }
 
-export interface IMovieDetails extends IMovieDetailsLoklok {
+export interface IMovieDetails extends Partial<IMovieDetailsLoklok> {
   qualities: IQuality[];
   subtitles: ISubtitle[];
   currentEpName: number;
