@@ -6,7 +6,7 @@ import { PATH } from "constants/path";
 import useElementOnScreen from "hooks/useElementOnScreen";
 import dynamic from "next/dynamic";
 import { Image } from "components/Image";
-import { useRef, useState } from "react";
+import { SyntheticEvent, useRef, useState } from "react";
 import styles from "./discoveryCard.module.scss";
 const ReactHlsPlayer = dynamic(() => import("react-hls-player"), {
   ssr: false
@@ -31,8 +31,9 @@ const DiscoveryCard = ({ info }: DiscoveryCardProps) => {
     aspectRatio: 1
   });
   const isLoading = playerStyles.maxWidth === "0px";
-  const handleLoadedMetadata = (event: any) => {
-    const aspectRatio = event.target.videoWidth / event.target.videoHeight;
+  const handleLoadedMetadata = (e: SyntheticEvent<HTMLVideoElement>) => {
+    const node = e.target as HTMLVideoElement;
+    const aspectRatio = node.videoWidth / node.videoHeight;
     if (aspectRatio === 1) {
       setPlayerStyles({ maxWidth: "473px", aspectRatio });
       return;
@@ -65,6 +66,7 @@ const DiscoveryCard = ({ info }: DiscoveryCardProps) => {
       {isLoading && (
         <div className={styles.loading}>
           <LoadingSpinner />
+          <span>Loading video...</span>
         </div>
       )}
       <div className={styles.playerContent}>

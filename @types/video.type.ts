@@ -21,7 +21,7 @@ export interface IUpInfo {
   userId: any;
 }
 
-export interface IMediaPreview {
+export interface IMediaPreviewLoklok {
   category: number;
   coverHorizontalUrl: string;
   coverVerticalUrl: string;
@@ -45,17 +45,9 @@ export interface IDiscovery {
   category: number;
   coverHorizontalUrl: string;
   coverVerticalUrl: string;
-  duration: number;
   id: string;
   introduction: string;
-  like: false;
   likeCount: number;
-  mediaInfo: {
-    definitionList: IDefinitionLoklok[];
-    id: number;
-    resourceType: number;
-    subtitlingList: ISubtitlingLoklok[];
-  };
   name: string;
   refList: IDiscoveryRef[];
   upInfo: IUpInfo;

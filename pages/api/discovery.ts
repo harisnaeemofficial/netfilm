@@ -1,4 +1,4 @@
-import { IMediaPreview } from "@types";
+import { IMediaPreviewLoklok } from "@types";
 import axiosLoklok from "configs/axiosLoklok";
 import { STATUS } from "constants/status";
 import type { NextApiRequest, NextApiResponse } from "next";
@@ -15,7 +15,7 @@ const discoveryApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const { data } = await axiosLoklok.get(`/recommendPool/getVideoFromRecommondPool`, {
     params: { page }
   });
-  const payloadGetMedia = data.map((item: IMediaPreview) => {
+  const payloadGetMedia = data.map((item: IMediaPreviewLoklok) => {
     const { definitionList } = item.mediaInfo;
     return {
       contentId: item.id,
@@ -25,10 +25,17 @@ const discoveryApi = async (req: NextApiRequest, res: NextApiResponse) => {
     };
   });
   const request = await axiosLoklok.post(`/media/bathGetplayInfo`, payloadGetMedia);
-  const videos = data.map((item: IMediaPreview, index: number) => {
+  const videos = data.map((item: IMediaPreviewLoklok, index: number) => {
     return {
-      ...item,
-      mediaInfoUrl: request.data[index]
+      category: item.category,
+      coverHorizontalUrl: item.coverHorizontalUrl,
+      coverVerticalUrl: item.coverVerticalUrl,
+      id: item.id,
+      likeCount: item.likeCount,
+      name: item.name,
+      refList: item.refList.slice(0, 1),
+      upInfo: item.upInfo,
+      mediaInfoUrl: request?.data[index]
     };
   });
   const response = {
