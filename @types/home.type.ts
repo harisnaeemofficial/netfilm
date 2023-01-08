@@ -5,7 +5,7 @@ export interface IBanner {
   jumpType: number;
 }
 
-export interface IRecommendVO {
+export interface IRecommendVOLoklok {
   category: number;
   contentType: string;
   id: number;
@@ -19,20 +19,33 @@ export interface IRecommendVO {
   title: string;
 }
 
-export interface IHomeSection {
+export interface IHomeSectionLoklok {
   bannerProportion?: number | null;
   blockGroupNum?: any;
   coverType?: any;
   homeSectionId: number;
   homeSectionName: string;
   homeSectionType: string;
-  recommendContentVOList: IRecommendVO[];
+  recommendContentVOList: IRecommendVOLoklok[];
   refId?: any;
   refRedirectUrl: string;
 }
 
-export interface IResponseHome {
+export interface IRecommendVO {
+  category: number;
+  id: number;
+  imageUrl: string;
+  title: string;
+}
+
+export interface IHomeSection {
+  homeSectionId: number;
+  homeSectionName: string;
+  homeMovies: IRecommendVO[];
+}
+
+export interface IResponseHomeLoklok {
   page: number;
-  recommendItems: IHomeSection[];
+  recommendItems: IHomeSectionLoklok[];
   searchKeyWord: string;
 }

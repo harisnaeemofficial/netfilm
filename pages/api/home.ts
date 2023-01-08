@@ -1,6 +1,4 @@
-import { IBanner, IResponseHome } from "@types";
-import axios from "axios";
-import * as cheerio from "cheerio";
+import { IResponseHomeLoklok } from "@types";
 import axiosLoklok from "configs/axiosLoklok";
 import { PATH_API } from "configs/path.api";
 import { STATUS } from "constants/status";
@@ -19,49 +17,30 @@ const HomePageApi = async (req: NextApiRequest, res: NextApiResponse) => {
     page: currentPage,
     recommendItems,
     searchKeyWord
-  }: IResponseHome = (await axiosLoklok(PATH_API.home, { params: { page } })).data;
-  const homeSections = recommendItems.filter(
+  }: IResponseHomeLoklok = (await axiosLoklok(PATH_API.home, { params: { page } })).data;
+  const validHomeSections = recommendItems.filter(
     (section) => section.homeSectionType !== "BLOCK_GROUP" && section.homeSectionName !== ""
   );
-  const banners = await getBanners();
+  const homeSections = validHomeSections.map((section) => ({
+    homeSectionName: section.homeSectionName.replace("Loklok", "Netfilm"),
+    homeSectionId: section.homeSectionId,
+    homeMovies: section.recommendContentVOList.map((movie) => ({
+      id: movie.id,
+      category: movie.category,
+      imageUrl: movie.imageUrl,
+      title: movie.title
+    }))
+  }));
   const response = {
     message: "Get home successfully!",
     data: {
       page: currentPage,
-      banners,
       searchKeyWord,
-      homeSections: homeSections.map((section) => ({
-        ...section,
-        homeSectionName: section.homeSectionName.replace("Loklok", "Netfilm")
-      }))
+      homeSections
     }
   };
   responseSuccess(res, response);
 };
-
-function getPosition(string: string, subString: string, index: number) {
-  return string.split(subString, index).join(subString).length;
-}
-
-async function getBanners() {
-  const response = await axios.get(PATH_API.loklok);
-  const html = response.data;
-  const $ = cheerio.load(html);
-  let banners: IBanner[] = [];
-  let scriptStr = $("#__nuxt + script").text();
-  scriptStr = scriptStr.slice(scriptStr.indexOf("banners:[") + 8, scriptStr.indexOf(",indexData:"));
-  scriptStr = scriptStr.replace(/[\[\]]/g, "");
-  scriptStr = scriptStr.replace(/\\u002F/g, "\u002F");
-  const arrayData = scriptStr.split("},");
-  $(".swiper-wrap .swiper-slide", html).each(function (index, element) {
-    const item = arrayData[index];
-    const id = item.slice(item.indexOf('jumpParam:"') + 11, getPosition(item, ",", 4) - 1);
-    const imageUrl = item.slice(item.indexOf("imgUrl:") + 8, item.indexOf('",'));
-    const title = $(element).find(".footer-shadow").text();
-    banners.push({ id: Number(id), imageUrl, title, jumpType: 1 });
-  });
-  return banners;
-}
 
 export default catchAsync(HomePageApi);
 

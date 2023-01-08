@@ -9,17 +9,14 @@ interface HomeListProps {
 const HomeSection = ({ homeSection }: HomeListProps) => {
   return (
     <MovieList heading={homeSection.homeSectionName}>
-      {homeSection.recommendContentVOList.slice(0, 12).map((section) => {
-        const arrayIdAndCate = section.jumpAddress?.split("?id=")[1];
-        const category = Number(arrayIdAndCate?.split("&type=")[1]);
-        if (Number.isNaN(category)) return null;
+      {homeSection.homeMovies.slice(0, 12).map((section) => {
         return (
           <MovieCard
-            key={arrayIdAndCate?.split("&type=")[0]}
-            id={arrayIdAndCate?.split("&type=")[0]}
+            key={section.id}
+            id={section.id.toString()}
             title={section.title}
             poster={section.imageUrl}
-            domainType={category}
+            domainType={section.category}
           />
         );
       })}

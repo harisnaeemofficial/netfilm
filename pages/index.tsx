@@ -56,11 +56,12 @@ const HomePage = ({ banners, initialHomeSections }: HomePageProps) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const { data } = await axiosClient.get(`/api/home`);
+    const { data: dataHome } = await axiosClient.get(`/api/home`);
+    const { data: banners } = await axiosClient.get(`/api/banner`);
     return {
       props: {
-        banners: data.banners,
-        initialHomeSections: data.homeSections
+        banners,
+        initialHomeSections: dataHome.homeSections
       },
       revalidate: REVALIDATE_TIME.success
     };
