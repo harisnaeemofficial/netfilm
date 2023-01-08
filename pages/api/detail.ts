@@ -1,4 +1,4 @@
-import { IEpisodeVo, ILikeMovie, IMovieDetails, IMovieDetailsLoklok } from "@types";
+import { IEpisodeVo, ILikeMovieLoklok } from "@types";
 import axiosLoklok from "configs/axiosLoklok";
 import { PATH_API } from "configs/path.api";
 import { STATUS } from "constants/status";
@@ -31,11 +31,12 @@ const getMovieDetailsPageApi = async (req: NextApiRequest, res: NextApiResponse)
   delete data.drameTypeVo;
   delete data.areaNameList;
   delete data.coverHorizontalUrlJson;
+  delete data.tagNameList;
   const response = {
     message: `Get details ${data.name} successfully!`,
     data: {
       ...data,
-      likeList: data.likeList.map((movie: ILikeMovie) => ({
+      likeList: data.likeList.map((movie: ILikeMovieLoklok) => ({
         id: movie.id,
         name: movie.name,
         coverVerticalUrl: movie.coverVerticalUrl,

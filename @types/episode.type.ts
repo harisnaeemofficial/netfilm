@@ -48,18 +48,10 @@ export interface IEpisodeRoom {
 export interface IEpisode {
   aliasName: string;
   areaList: IObjIdName[];
-  areaNameList: string[];
   category: number;
-  collect: boolean;
   currentEpisode: number;
-  contentTagResourceList: [];
   coverHorizontalUrl: string;
-  coverHorizontalUrlJson: string;
   coverVerticalUrl: string;
-  drameTypeVo: {
-    drameName: string;
-    drameType: string;
-  };
   episodeCount: number;
   episodeRoomListVo: IEpisodeRoom;
   episodeVo: { id: number; seriesNo: number }[];
@@ -67,28 +59,18 @@ export interface IEpisode {
   introduction: string;
   likeList: ILikeMovie[];
   name: string;
-  nameJson: string;
   refList: IRefItem[];
-  reserved: boolean;
   score: number;
-  seriesNo: number | any;
-  showSetName: boolean;
+  seriesNo: number | null;
   starList: IStar[];
   tagList: IObjIdName[];
-  tagNameList: string[];
-  translateType: number;
   totalDuration: number;
-  upInfo: {
-    upId: number;
-    upImgUrl: string;
-    upName: string;
-  };
   updateInfo: {
     updatePeriod: string;
     updateStatus: number;
-  };
+  } | null;
   year: number;
-  currentEpName: number;
+  currentEpName: string;
   qualities: IQuality[];
   subtitles: ISubtitle[];
   episode: number;

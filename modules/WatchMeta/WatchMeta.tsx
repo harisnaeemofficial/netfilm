@@ -1,3 +1,4 @@
+import { IObjIdName } from "@types";
 import { IconStar } from "components/Icons";
 import styles from "./watchMeta.module.scss";
 
@@ -6,10 +7,7 @@ interface WatchMetaProps {
   currentEpisode: number;
   score: number;
   year: number;
-  areaList: {
-    id: number;
-    name: string;
-  }[];
+  areaList: IObjIdName[];
 }
 
 const WatchMeta = ({ episodeCount, currentEpisode, score, areaList, year }: WatchMetaProps) => {

@@ -59,26 +59,41 @@ const getEpisodeApi = async (req: NextApiRequest, res: NextApiResponse) => {
       if (curr.lang === "vi") return [curr, ...acc];
       return [...acc, curr];
     }, [] as ISubtitle[]);
+  const hasNextEpisode = movieDetails.episodeVo.length === 1;
+  const responseData: any = {
+    ...movieDetails,
+    episode: episode || currentEpisode.id,
+    episodeVo: movieDetails.episodeVo.map((ep) => ({
+      id: ep.id,
+      seriesNo: ep.seriesNo
+    })),
+    likeList: movieDetails.likeList.map((movie) => ({
+      id: movie.id,
+      name: movie.name,
+      coverVerticalUrl: movie.coverVerticalUrl,
+      category: movie.category
+    })),
+    totalDuration: totalDuration || 0,
+    currentEpName: hasNextEpisode ? `Ep ${currentEpisode.seriesNo}` : "",
+    qualities,
+    subtitles
+  };
+  delete responseData.collect;
+  delete responseData.drameTypeVo;
+  delete responseData.episodeRoomListVo;
+  delete responseData.contentTagResourceList;
+  delete responseData.reserved;
+  delete responseData.showSetName;
+  delete responseData.nameJson;
+  delete responseData.translateType;
+  delete responseData.upInfo;
+  delete responseData.drameTypeVo;
+  delete responseData.areaNameList;
+  delete responseData.coverHorizontalUrlJson;
+  delete responseData.tagNameList;
   const response = {
     message: `Get info episode ${currentEpisode?.seriesNo} of ${movieDetails.name} successfully!`,
-    data: {
-      ...movieDetails,
-      episode,
-      episodeVo: movieDetails.episodeVo.map((ep) => ({
-        id: ep.id,
-        seriesNo: ep.seriesNo
-      })),
-      likeList: movieDetails.likeList.map((movie) => ({
-        id: movie.id,
-        name: movie.name,
-        coverVerticalUrl: movie.coverVerticalUrl,
-        category: movie.category
-      })),
-      totalDuration: totalDuration || 0,
-      currentEpName: movieDetails.episodeVo.length === 1 ? "" : `Ep ${currentEpisode?.seriesNo}`,
-      qualities,
-      subtitles
-    }
+    data: responseData
   };
   responseSuccess(res, response);
 };

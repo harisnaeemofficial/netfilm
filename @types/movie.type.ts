@@ -19,7 +19,7 @@ export interface IRefItem {
   seriesNo: number;
 }
 
-export interface ILikeMovie {
+export interface ILikeMovieLoklok {
   areaList: IObjIdName[];
   areaNameList: string[];
   category: number;
@@ -35,6 +35,13 @@ export interface ILikeMovie {
   upImgUrl: string;
   upName: string;
   year: number;
+}
+
+export interface ILikeMovie {
+  id: string;
+  name: string;
+  coverVerticalUrl: string;
+  category: number;
 }
 
 export interface IMovieDetailsLoklok {
@@ -53,7 +60,7 @@ export interface IMovieDetailsLoklok {
   episodeVo: IEpisodeVo[];
   id: string;
   introduction: string;
-  likeList: ILikeMovie[];
+  likeList: ILikeMovieLoklok[];
   name: string;
   nameJson: string;
   refList: IRefItem[];
@@ -66,14 +73,38 @@ export interface IMovieDetailsLoklok {
   tagNameList: string[];
   translateType: number;
   upInfo: { upId: number; upImgUrl: string; upName: string };
-  updateInfo?: any;
+  updateInfo: {
+    updatePeriod: string;
+    updateStatus: number;
+  } | null;
   year: number;
 }
 
-export interface IMovieDetails extends Partial<IMovieDetailsLoklok> {
+export interface IMovieDetails {
+  aliasName: string;
+  areaList: IObjIdName[];
+  category: number;
+  coverHorizontalUrl: string;
+  coverVerticalUrl: string;
+  episodeCount?: number | null;
+  episodeVo: IEpisodeVo[];
+  id: string;
+  introduction: string;
+  likeList: ILikeMovie[];
+  name: string;
+  refList: IRefItem[];
+  seriesNo: number;
+  score: number;
+  starList: IStar[];
+  tagList: IObjIdName[];
+  updateInfo: {
+    updatePeriod: string;
+    updateStatus: number;
+  } | null;
+  year: number;
   qualities: IQuality[];
   subtitles: ISubtitle[];
-  currentEpName: number;
+  currentEpName: string;
 }
 
 export interface IMovieSearch {
@@ -109,7 +140,7 @@ export interface IHistoryView {
   coverHorizontalUrl: string;
   episode: number;
   episodeName: number;
-  currentEpName: number;
+  currentEpName: string;
   progress: number;
   totalDuration: number;
   currentTime: number;
