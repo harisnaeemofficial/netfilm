@@ -1,11 +1,11 @@
 import { CheckLoggedIn } from "components/Authentication";
-import WrapLink from "components/WrapLink";
 import FormGroup from "components/FormGroup";
 import Input from "components/Input";
 import InputPassword from "components/InputPassword";
 import Label from "components/Label";
 import Meta from "components/Meta";
-import { userRole, userStatus } from "constants/global";
+import WrapLink from "components/WrapLink";
+import { defaultAvatar, userRole, userStatus } from "constants/global";
 import { PATH } from "constants/path";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
@@ -38,14 +38,13 @@ const SignUpPage = () => {
       await createUserWithEmailAndPassword(auth, values.email, values.password);
       if (!auth.currentUser) return;
       await updateProfile(auth.currentUser, {
-        photoURL: "https://avatars.githubusercontent.com/u/61537853?v=4"
+        photoURL: defaultAvatar
       });
       await setDoc(doc(db, "users", auth.currentUser.uid as string), {
         uid: auth.currentUser.uid,
-        photoURL: "https://avatars.githubusercontent.com/u/61537853?v=4",
+        photoURL: defaultAvatar,
         displayName: auth.currentUser.displayName || "Unknown",
         email: values.email,
-        password: values.password,
         status: userStatus.ACTIVE,
         role: userRole.USER,
         createdAt: serverTimestamp(),
