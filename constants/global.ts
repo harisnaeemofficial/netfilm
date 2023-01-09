@@ -44,6 +44,6 @@ export const commentStatus = {
 };
 
 export const REVALIDATE_TIME = {
-  success: 360,
-  fail: 60
+  success: 60 * 60 * 24, // 1 days
+  fail: 60 * 5 // 5 minutes
 };

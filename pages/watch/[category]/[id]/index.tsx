@@ -20,7 +20,8 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     };
   } catch (error) {
     return {
-      props: {}
+      props: {},
+      notFound: true
     };
   }
 };

@@ -59,7 +59,7 @@ const getEpisodeApi = async (req: NextApiRequest, res: NextApiResponse) => {
       if (curr.lang === "vi") return [curr, ...acc];
       return [...acc, curr];
     }, [] as ISubtitle[]);
-  const hasNextEpisode = movieDetails.episodeVo.length === 1;
+  const hasNextEpisode = movieDetails.episodeVo.length > 1;
   const responseData: any = {
     ...movieDetails,
     episode: episode || currentEpisode.id,
