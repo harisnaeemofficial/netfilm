@@ -52,7 +52,7 @@ NEXT_PUBLIC_NODE_ENV = development (or production if deploy to vercel)
 NEXT_PUBLIC_BASE_URL_API = https://ga-mobile-api.loklok.tv/cms/app
 NEXT_PUBLIC_BASE_URL_API_SUB = https://mobile-api.netpop.app/cms/web/pc
 NEXT_PUBLIC_VERCEL = https://net-film.vercel.app (Link vercel)
-NEXT_PUBLIC_LOCALHOST = http://localhost:3000
+NEXT_PUBLIC_LOCALHOST = http://localhost:3002
 
 # See: https://firebase.google.com
 NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY=

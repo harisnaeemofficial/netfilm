@@ -19,10 +19,13 @@
     color: var(--purple);
   }
 }
-.relatedThumb img {
-  border-radius: 4px;
-  transition: all 0.25s linear;
+.relatedThumb {
   background: var(--dark33);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.relatedThumb img {
+  transition: all 0.25s linear;
 }
 .relatedInfo {
   flex: 1;
