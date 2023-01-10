@@ -23,7 +23,6 @@ const SearchBox = ({ className = "" }: SearchBoxProps) => {
     setSuggests(data);
   };
   const handleChangeKeyword = async (e: ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.value) return;
     setKeyword(e.target.value);
   };
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -44,6 +43,8 @@ const SearchBox = ({ className = "" }: SearchBoxProps) => {
           className={styles.searchInput}
           placeholder="Search movie..."
           onChange={handleChangeKeyword}
+          onKeyDown={(e) => e.stopPropagation()}
+          onKeyUp={(e) => e.stopPropagation()}
         />
         <button type="submit" className={styles.searchButton}>
           <IconSearch />

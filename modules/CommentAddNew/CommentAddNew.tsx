@@ -65,7 +65,6 @@ const CommentAddNew = () => {
           placeholder="Write comment..."
           onKeyDown={(e) => e.stopPropagation()}
           onKeyUp={(e) => e.stopPropagation()}
-          onKeyPress={(e) => e.stopPropagation()}
           onChange={(e) => setCommentValue(e.target.value)}
         />
       </div>
