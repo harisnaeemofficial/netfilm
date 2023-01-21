@@ -43,7 +43,7 @@ const ExplorePage = ({ filters }: ExplorePageProps) => {
     getApiUrl,
     async (apiURL: string) => {
       const { data } = await axiosClient.get(apiURL);
-      return data.results;
+      return data;
     },
     { revalidateFirstPage: false, fallbackData: [] }
   );
@@ -120,11 +120,11 @@ const ExplorePage = ({ filters }: ExplorePageProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const { data } = await axiosClient.get(`/api/category`, { params: query });
+    const { data: filters } = await axiosClient.get(`/api/filter`);
     return {
-      props: { filters: data.filters }
+      props: { filters: filters }
     };
   } catch (error) {
     return {

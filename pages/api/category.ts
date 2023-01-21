@@ -31,10 +31,10 @@ const searchWithCategoryApi = async (req: NextApiRequest, res: NextApiResponse) 
     subtitles,
     year
   });
-  const { data: filters } = await axiosLoklok(PATH_API.genres);
+
   const response = {
     message: "Get search by category successfully!",
-    data: { filters, results: data.searchResults }
+    data: data.searchResults
   };
   responseSuccess(res, response);
 };
