@@ -1,4 +1,4 @@
-import { IBanner, IHomeSection } from "@types";
+import { IBanner, IHomeSection } from "types";
 import axiosClient from "configs/axiosClient";
 import { REVALIDATE_TIME } from "constants/global";
 import LayoutPrimary from "layouts/LayoutPrimary";

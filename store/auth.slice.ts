@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ICurrentUser } from "@types";
+import { ICurrentUser } from "types";
 import { signOut } from "firebase/auth";
 import { auth } from "libs/firebase-app";
 

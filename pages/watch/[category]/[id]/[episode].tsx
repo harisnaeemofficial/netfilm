@@ -1,4 +1,4 @@
-import { IEpisode } from "@types";
+import { IEpisode } from "types";
 import axiosClient from "configs/axiosClient";
 import { WatchPage } from "modules/WatchPage";
 import { GetServerSideProps } from "next";

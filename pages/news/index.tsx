@@ -1,4 +1,4 @@
-import { INewsCard } from "@types";
+import { INewsCard } from "types";
 import Meta from "components/Meta";
 import axiosClient from "configs/axiosClient";
 import { REVALIDATE_TIME } from "constants/global";

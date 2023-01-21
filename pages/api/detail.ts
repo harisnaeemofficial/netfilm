@@ -1,4 +1,4 @@
-import { IEpisodeVo, ILikeMovieLoklok } from "@types";
+import { IEpisodeVo, ILikeMovieLoklok } from "types";
 import axiosLoklok from "configs/axiosLoklok";
 import { PATH_API } from "configs/path.api";
 import { STATUS } from "constants/status";

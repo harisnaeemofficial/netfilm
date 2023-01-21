@@ -1,4 +1,4 @@
-import { IMovieCard } from "@types";
+import { IMovieCard } from "types";
 import WrapLink from "components/WrapLink";
 import { Image } from "components/Image";
 import { IMAGE_SIZE, resizeImageLoklok } from "constants/global";

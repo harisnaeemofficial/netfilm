@@ -1,4 +1,4 @@
-import { IComment } from "@types";
+import { IComment } from "types";
 import { Unsubscribe } from "firebase/auth";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "libs/firebase-app";

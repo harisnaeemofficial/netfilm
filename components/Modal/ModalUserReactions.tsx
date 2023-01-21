@@ -1,4 +1,4 @@
-import { ICommentReaction } from "@types";
+import { ICommentReaction } from "types";
 import { IconClose } from "components/Icons";
 import { Image } from "components/Image";
 import Modal from "react-modal";

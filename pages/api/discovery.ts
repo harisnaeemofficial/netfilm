@@ -1,4 +1,4 @@
-import { IMediaPreviewLoklok } from "@types";
+import { IMediaPreviewLoklok } from "types";
 import axiosLoklok from "configs/axiosLoklok";
 import { STATUS } from "constants/status";
 import type { NextApiRequest, NextApiResponse } from "next";

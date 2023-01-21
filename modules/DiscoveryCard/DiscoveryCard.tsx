@@ -1,4 +1,4 @@
-import { IDiscovery } from "@types";
+import { IDiscovery } from "types";
 import WrapLink from "components/WrapLink";
 import { IconHeart, IconShare } from "components/Icons";
 import LoadingSpinner from "components/LoadingSpinner";

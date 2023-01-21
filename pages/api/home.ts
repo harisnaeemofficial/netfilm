@@ -1,4 +1,4 @@
-import { IResponseHomeLoklok } from "@types";
+import { IResponseHomeLoklok } from "types";
 import axiosLoklok from "configs/axiosLoklok";
 import { PATH_API } from "configs/path.api";
 import { STATUS } from "constants/status";

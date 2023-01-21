@@ -1,7 +1,7 @@
 const ReactHlsPlayer = dynamic(() => import("react-hls-player"), {
   ssr: false
 });
-import { IQuality, ISubtitle } from "@types";
+import { IQuality, ISubtitle } from "types";
 import dynamic from "next/dynamic";
 import { HlsPlayerProps } from "react-hls-player";
 import { Player } from "react-tuby";

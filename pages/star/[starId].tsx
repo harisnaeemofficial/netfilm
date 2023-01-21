@@ -1,4 +1,4 @@
-import { IStarInfo } from "@types";
+import { IStarInfo } from "types";
 import TextToggleMore from "components/TextToggleMore";
 import axiosClient from "configs/axiosClient";
 import LayoutPrimary from "layouts/LayoutPrimary";

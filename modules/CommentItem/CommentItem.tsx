@@ -1,4 +1,4 @@
-import { IComment } from "@types";
+import { IComment } from "types";
 import { Image } from "components/Image";
 import { ModalUserReactions } from "components/Modal";
 import { defaultAvatar } from "constants/global";

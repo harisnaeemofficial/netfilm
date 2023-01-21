@@ -1,4 +1,4 @@
-import { IMovieCard } from "@types";
+import { IMovieCard } from "types";
 import { IconBell, IconShare } from "components/Icons";
 import { server } from "configs/server";
 import { doc, updateDoc } from "firebase/firestore";

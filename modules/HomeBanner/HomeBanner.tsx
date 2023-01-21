@@ -1,6 +1,6 @@
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { IBanner } from "@types";
+import { IBanner } from "types";
 import styles from "./homeBanner.module.scss";
 import WrapLink from "components/WrapLink";
 import { PATH } from "constants/path";

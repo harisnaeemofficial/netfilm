@@ -1,4 +1,4 @@
-import { IHistoryView } from "@types";
+import { IHistoryView } from "types";
 import { IconEmptyHistory, IconTrash } from "components/Icons";
 import { Image } from "components/Image";
 import Meta from "components/Meta";

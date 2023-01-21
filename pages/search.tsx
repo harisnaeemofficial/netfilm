@@ -1,4 +1,4 @@
-import { IMovieSearch } from "@types";
+import { IMovieSearch } from "types";
 import Meta from "components/Meta";
 import axiosClient from "configs/axiosClient";
 import LayoutPrimary from "layouts/LayoutPrimary";

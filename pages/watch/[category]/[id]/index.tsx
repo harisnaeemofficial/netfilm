@@ -1,4 +1,4 @@
-import { IEpisode } from "@types";
+import { IEpisode } from "types";
 import axiosClient from "configs/axiosClient";
 import { REVALIDATE_TIME } from "constants/global";
 import { WatchPage } from "modules/WatchPage";

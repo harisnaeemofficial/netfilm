@@ -1,6 +1,6 @@
 import MovieCard from "modules/MovieCard";
 import MovieList from "modules/MovieList";
-import { IHomeSection } from "@types";
+import { IHomeSection } from "types";
 
 interface HomeListProps {
   homeSection: IHomeSection;

@@ -1,4 +1,4 @@
-import { IEpisode, IHistoryView } from "@types";
+import { IEpisode, IHistoryView } from "types";
 import Meta from "components/Meta";
 import { resizeImageLoklok } from "constants/global";
 import { LocalStorage } from "constants/localStorage";

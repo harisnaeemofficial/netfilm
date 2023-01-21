@@ -1,4 +1,4 @@
-import { IStar } from "@types";
+import { IStar } from "types";
 import { StarItem } from "modules/StarItem";
 import styles from "./watchStar.module.scss";
 

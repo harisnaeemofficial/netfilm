@@ -1,4 +1,4 @@
-import { IEpisode } from "@types";
+import { IEpisode } from "types";
 import { LocalStorage } from "constants/localStorage";
 import { useRouter } from "next/router";
 import { useEffect } from "react";

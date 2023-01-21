@@ -1,4 +1,4 @@
-import { IBanner } from "@types";
+import { IBanner } from "types";
 import axios from "axios";
 import * as cheerio from "cheerio";
 import { PATH_API } from "configs/path.api";

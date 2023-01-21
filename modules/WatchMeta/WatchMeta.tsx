@@ -1,4 +1,4 @@
-import { IObjIdName } from "@types";
+import { IObjIdName } from "types";
 import { IconStar } from "components/Icons";
 import styles from "./watchMeta.module.scss";
 

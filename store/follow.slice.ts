@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IMovieCard } from "@types";
+import { IMovieCard } from "types";
 
 export interface IFollowState {
   follows: IMovieCard[];

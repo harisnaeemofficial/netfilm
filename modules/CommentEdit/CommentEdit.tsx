@@ -1,4 +1,4 @@
-import { IComment } from "@types";
+import { IComment } from "types";
 import TextArea from "components/TextAreaBox";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "libs/firebase-app";

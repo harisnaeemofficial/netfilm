@@ -1,4 +1,4 @@
-import { IDiscovery } from "@types";
+import { IDiscovery } from "types";
 import LoadingSpinner from "components/LoadingSpinner";
 import Meta from "components/Meta";
 import axiosClient from "configs/axiosClient";
