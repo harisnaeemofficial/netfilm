@@ -1,4 +1,4 @@
-import { ICategoryResult, IFilter, IFilterOptions } from "@types";
+import { ICategoryResult, IFilter, IFilterOptions } from "types";
 import Dropdown from "components/Dropdown";
 import Meta from "components/Meta";
 import axiosClient from "configs/axiosClient";
