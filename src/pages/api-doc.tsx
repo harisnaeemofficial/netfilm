@@ -26,7 +26,7 @@ const ApiDoc = ({ spec }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const spec: Record<string, any> = createSwaggerSpec({
-    apiFolder: "pages/api",
+    apiFolder: "src/pages/api",
     definition: {
       openapi: "3.0.0",
       servers: [{ url: `${server}/api` }, { url: `${process.env.NEXT_PUBLIC_LOCALHOST}/api` }],
