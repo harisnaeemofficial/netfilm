@@ -15,6 +15,7 @@ import "styles/reset.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import "nprogress/nprogress.css";
+import GoogleAnalytics from "components/GoogleAnalytics";
 
 Modal.setAppElement("#__next");
 Modal.defaultStyles = {
@@ -38,6 +39,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <ErrorBoundary>
       <Provider store={store}>
         <Meta />
+        <GoogleAnalytics />
         <Authentication>
           <Component {...pageProps} />
           <Toaster position="top-right" />
