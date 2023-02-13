@@ -1,5 +1,4 @@
 import axios from "axios";
-import queryString from "query-string";
 import { randomDeviceId } from "utils/helper";
 
 const baseHeaders = {
@@ -12,7 +11,7 @@ const baseHeaders = {
 };
 
 const axiosLoklok = axios.create({
-  baseURL: "https://ga-mobile-api.loklok.tv/cms/app",
+  baseURL: process.env.NEXT_PUBLIC_BASE_URL_API,
   headers: {
     ...baseHeaders,
     deviceid: randomDeviceId(16)
@@ -41,7 +40,6 @@ axiosLoklok.interceptors.response.use(
     return response;
   },
   async (error) => {
-    console.log("error: ", JSON.stringify(error, null, 2));
     const { response } = error;
     const errorResult = { ...response?.data, status: response?.status };
     return Promise.reject(errorResult);
