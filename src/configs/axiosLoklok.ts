@@ -1,15 +1,21 @@
 import axios from "axios";
+import queryString from "query-string";
 import { randomDeviceId } from "utils/helper";
 
+const baseHeaders = {
+  lang: "en",
+  versioncode: "32",
+  clienttype: "android_tem3",
+  "Content-Type": "application/json",
+  "user-agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36 OPR/84.0.4316.52"
+};
+
 const axiosLoklok = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BASE_URL_API,
+  baseURL: "https://ga-mobile-api.loklok.tv/cms/app",
   headers: {
-    lang: "en",
-    versioncode: "32",
-    clienttype: "android_tem3",
-    deviceid: randomDeviceId(16),
-    "user-agent":
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36 OPR/84.0.4316.52"
+    ...baseHeaders,
+    deviceid: randomDeviceId(16)
   }
 });
 
@@ -18,13 +24,8 @@ axiosLoklok.interceptors.request.use(
     const customConfig = {
       ...config,
       headers: {
-        lang: "en",
-        versioncode: "32",
-        clienttype: "android_tem3",
-        deviceid: randomDeviceId(16),
-        sign: randomDeviceId(32),
-        "user-agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36 OPR/84.0.4316.52"
+        ...baseHeaders,
+        deviceid: randomDeviceId(16)
       }
     };
     return customConfig;
@@ -40,8 +41,9 @@ axiosLoklok.interceptors.response.use(
     return response;
   },
   async (error) => {
+    console.log("error: ", JSON.stringify(error, null, 2));
     const { response } = error;
-    const errorResult = { ...response.data, status: response.status };
+    const errorResult = { ...response?.data, status: response?.status };
     return Promise.reject(errorResult);
   }
 );
