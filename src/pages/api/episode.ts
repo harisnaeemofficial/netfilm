@@ -23,17 +23,14 @@ const getEpisodeApi = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!currentEpisode) currentEpisode = episodeVo[0];
   const { definitionList, subtitlingList } = currentEpisode;
   const getEpisode = async (code: string) => {
-    return await axiosLoklok.get(
-      "https://ga-mobile-api.loklok.tv/cms/web/pc/movieDrama/getPlayInfo",
-      {
-        params: {
-          category: category,
-          contentId: id,
-          episodeId: currentEpisode?.id,
-          definition: code
-        }
+    return await axiosLoklok.get("/media/previewInfo", {
+      params: {
+        category: category,
+        contentId: id,
+        episodeId: currentEpisode?.id,
+        definition: code
       }
-    );
+    });
   };
   let totalDuration = 0;
   const qualities = await Promise.all(
