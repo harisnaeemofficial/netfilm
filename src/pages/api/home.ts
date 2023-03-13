@@ -1,12 +1,11 @@
-import { IResponseHomeLoklok } from "types";
 import axiosLoklok from "configs/axiosLoklok";
 import { PATH_API } from "configs/path.api";
-import { STATUS } from "constants/status";
-import type { NextApiRequest, NextApiResponse } from "next";
-import catchAsync from "utils/catch-async";
-import { ApiError, responseError, responseSuccess } from "utils/response";
-import methodMiddleware from "middleware/method.middleware";
 import appMiddleware from "middleware/app.middleware";
+import methodMiddleware from "middleware/method.middleware";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { IResponseHomeLoklok } from "types";
+import catchAsync from "utils/catch-async";
+import { responseSuccess } from "utils/response";
 
 const HomePageApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method, query } = req;
