@@ -2,7 +2,11 @@ import axios from "axios";
 import { server } from "./server";
 
 const axiosClient = axios.create({
-  baseURL: server
+  baseURL: server,
+  headers: {
+    tokenapp: process.env.NEXT_PUBLIC_APP,
+    appid: process.env.NEXT_PUBLIC_APP
+  }
 });
 
 axiosClient.interceptors.response.use(

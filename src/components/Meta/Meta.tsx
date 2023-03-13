@@ -11,7 +11,7 @@ interface MetaProps {
 const Meta = ({
   title = "NetFilm - Watch HD movies online for free - Highest Rated Movies Recommendation",
   description = "Popular episodes updated quickly, American hot series Tension, comedy, thriller,Newest hottest dramasall in NetFilm",
-  image = `/image-seo.png`
+  image = `https://raw.githubusercontent.com/lamhoang1256/netfilm/main/public/image-seo.png`
 }: MetaProps) => {
   const router = useRouter();
   return (

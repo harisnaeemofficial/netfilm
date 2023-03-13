@@ -5,14 +5,14 @@ import { STATUS } from "constants/status";
 import type { NextApiRequest, NextApiResponse } from "next";
 import catchAsync from "utils/catch-async";
 import { ApiError, responseError, responseSuccess } from "utils/response";
+import methodMiddleware from "middleware/method.middleware";
+import appMiddleware from "middleware/app.middleware";
 
 const HomePageApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method, query } = req;
+  methodMiddleware(method as string, ["GET"], res);
+  appMiddleware(req, res);
   const { page = 0 } = query;
-  if (method !== "GET") {
-    const error = new ApiError(STATUS.METHOD_NOT_ALLOWED, "Method not allowed");
-    return responseError(error, res);
-  }
   const {
     page: currentPage,
     recommendItems,

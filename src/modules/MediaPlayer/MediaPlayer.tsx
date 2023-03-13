@@ -20,8 +20,12 @@ const MediaPlayer = ({
   playerRef,
   ...HlsProps
 }: MediaPlayerProps) => {
+  const qualitiesProxy = qualities.map((q) => ({
+    quality: q.quality,
+    url: `${process.env.NEXT_PUBLIC_PROXY_LOKLOK}/m3u8?url=${encodeURIComponent(q.url)}`
+  }));
   return (
-    <Player src={qualities} subtitles={subtitles} playerRef={playerRef}>
+    <Player src={qualitiesProxy} subtitles={subtitles} playerRef={playerRef}>
       {(ref, props) => (
         <ReactHlsPlayer {...props} {...HlsProps} playerRef={ref} autoPlay={true} poster={poster} />
       )}

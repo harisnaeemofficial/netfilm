@@ -13,7 +13,7 @@ A Website To Watch HD Movies, Anime And TV Online For Free Using NextJS
 
 ## Resources
 
-- API: https://documenter.getpostman.com/view/18986031/UVXdNeFD?fbclid=IwAR3XYwO8C563AuepUFWNFDs9iJzc3jfTWybQRWUekZX4PNWeiGBum_CiRKk
+- Api Loklok from ([napthedev](https://github.com/napthedev)): https://documenter.getpostman.com/view/18986031/UVXdNeFD?fbclid=IwAR3XYwO8C563AuepUFWNFDs9iJzc3jfTWybQRWUekZX4PNWeiGBum_CiRKk
 - My API Docs: https://net-film.vercel.app/api-doc
 - Font Family: Montserrat
 
@@ -44,38 +44,6 @@ A Website To Watch HD Movies, Anime And TV Online For Free Using NextJS
 - View information of the actors in the movie
 - Read latest breaking movie news
 - Optimize SEO and Responsive on many devices
-
-## Environment Variables
-
-```
-NEXT_PUBLIC_NODE_ENV = development
-  (development if run at localhost or production if deploy to vercel)
-NEXT_PUBLIC_BASE_URL_API = https://ga-mobile-api.loklok.tv/cms/app
-NEXT_PUBLIC_BASE_URL_API_SUB = https://mobile-api.netpop.app/cms/web/pc
-NEXT_PUBLIC_VERCEL = https://net-film.vercel.app (Your link vercel)
-NEXT_PUBLIC_LOCALHOST = http://localhost:3002
-
-# See: https://firebase.google.com
-NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY=
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
-NEXT_PUBLIC_FIREBASE_APP_ID=
-NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
-```
-
-## Deployment
-
-- Create a new project on the vercel dashboard -> Add Environment Variables from .env.example
-- Go to Settings -> Functions -> Function Region -> Change the region to "Sydney, Australia"
-- Redeploy the project
-
-#### If an error occurs npm ERR! code ERESOLVE, npm ERR! ERESOLVE unable to resolve dependency tree -> Change Install Command
-
-![Fix](https://user-images.githubusercontent.com/61537853/204084412-62207266-7082-48ed-bf42-1256b2073a28.png)
-
-- See more: https://vercel.com/changelog/customizing-the-install-command-while-creating-projects
 
 ## Screenshots
 
