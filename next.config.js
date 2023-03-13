@@ -11,8 +11,11 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/api/(.*)",
-        headers: [{ key: "Access-Control-Allow-Origin", value: "https://net-film.vercel.app" }]
+        source: "/api/:path*",
+        headers: [
+          { key: "Access-Control-Allow-Credentials", value: "true" },
+          { key: "Access-Control-Allow-Origin", value: "https://net-film.vercel.app" }
+        ]
       }
     ];
   }
