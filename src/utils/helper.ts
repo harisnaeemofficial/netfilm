@@ -39,6 +39,10 @@ export const formatTimeDuration = (totalDuration: number) => {
     .join(":");
 };
 
+export const removeHttp = (url: string) => {
+  return url.replace(/^https?:\/\//, "");
+};
+
 export const sortSubtitles = (subtitles: ISubtitlingLoklok[]) => {
   return subtitles
     .map((sub) => ({
