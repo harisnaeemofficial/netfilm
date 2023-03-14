@@ -4,7 +4,6 @@ import { server } from "./server";
 const axiosClient = axios.create({
   baseURL: server,
   headers: {
-    referer: `${server}/`,
     appid: process.env.NEXT_PUBLIC_APP
   }
 });
