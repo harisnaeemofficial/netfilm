@@ -1,6 +1,6 @@
 import axiosLoklok from "configs/axiosLoklok";
 import { PATH_API } from "configs/path.api";
-import appMiddleware from "middleware/app.middleware";
+
 import methodMiddleware from "middleware/method.middleware";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { IResponseHomeLoklok } from "types";
@@ -10,7 +10,7 @@ import { responseSuccess } from "utils/response";
 const HomePageApi = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method, query } = req;
   methodMiddleware(method as string, ["GET"], res);
-  appMiddleware(req, res);
+
   const { page = 0 } = query;
   const {
     page: currentPage,
