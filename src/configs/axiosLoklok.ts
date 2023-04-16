@@ -4,7 +4,7 @@ import { randomDeviceId } from "utils/helper";
 // Thanks to hexated
 // https://github.com/hexated/cloudstream-extensions-hexated/blob/5da078d17002e6b226a970045cb5316899f438b3/Loklok/src/main/kotlin/com/hexated/Loklok.kt
 const baseHeaders = {
-  lang: "en",
+  lang: "vi",
   versioncode: "33",
   clienttype: "android_tem3",
   "Content-Type": "application/json",
