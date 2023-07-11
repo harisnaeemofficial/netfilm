@@ -13,35 +13,24 @@ A Website To Watch HD Movies, Anime And TV Online For Free Using NextJS
 
 ## Credits
 
-- Superstream: https://github.com/Blatzar/cloudstream-extensions/blob/master/SuperStream ()
+- Superstream: https://github.com/Blatzar/cloudstream-extensions/blob/master/SuperStream
 - Consumet API : https://github.com/consumet/consumet.ts (Flixhq, Gogoanime, Viewasian)
 - Kuramanime: https://github.com/LuckyIndraEfendi/AnimeIndo-Rest-API
-- https://github.com/hexated/cloudstream-extensions-hexated (Kisskh, Phimmotchill)
-
-## Resources
-
-- Proxy API: https://corsproxy.io
-- Font Family: Fira Sans
-
-## Main technology used
-
-- NextJS, Typescript
-- Taiwindcss
-- Axios, react-query (Support fetching data)
-- Swiper (Slider), react-modal (Modal)
-- React-toastify, react-hot-toast (Message UI)
-- Cheerio (Crawl data)
-- Player: custom from netplay, react-tuby
-- Other: react-lazy-load-image-component, react-error-boundary, react-paginate, react-select, slugify,...
+- Hexated: https://github.com/hexated/cloudstream-extensions-hexated (Kisskh, Phimmotchill)
 
 ## Features
 
-- Full HD movies with subtitles in many languages
-- Suggested movies you may like
-- Skeleton loading, infinite scrolling movie at Homepage
-- Search movie by name
-- Save history you watch, follow movie you like
-- Optimize SEO and Responsive on many devices
+- 📺 Full HD movie, showtv, anime with subtitles in many languages
+- 👍 Suggested more movies you may like
+- 🔍 Search movie by name, country
+- 📑 Save the history of watched movies, keep track of your favorite movies to make it easy to watch again
+- 📐 Optimize responsive on many devices
+- 🌏 Support multiple languages ​​on website
+
+## Main technology used
+
+- NextJS, Typescript, Taiwindcss
+- Player: custom from [netplayer](https://www.npmjs.com/package/netplayer), [react-tuby](https://react-tuby.vercel.app)
 
 ## Screenshots
 
