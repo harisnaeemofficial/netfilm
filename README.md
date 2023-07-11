@@ -9,11 +9,17 @@ A Website To Watch HD Movies, Anime And TV Online For Free Using NextJS
 
 ## Preview
 
-![homepage](https://github.com/lamhoang1256/netfilm/assets/61537853/19e11faa-e662-4080-971a-b5fa1c4a5039)
+![homepage](https://raw.githubusercontent.com/lamhoang1256/netfilm/main/public/netfilm.png)
+
+## Credits
+
+- Superstream: https://github.com/Blatzar/cloudstream-extensions/blob/master/SuperStream ()
+- Consumet API : https://github.com/consumet/consumet.ts (Flixhq, Gogoanime, Viewasian)
+- Kuramanime: https://github.com/LuckyIndraEfendi/AnimeIndo-Rest-API
+- https://github.com/hexated/cloudstream-extensions-hexated (Kisskh, Phimmotchill)
 
 ## Resources
 
-- Some providers movie references from: https://github.com/hexated/cloudstream-extensions-hexated
 - Proxy API: https://corsproxy.io
 - Font Family: Fira Sans
 
@@ -43,7 +49,16 @@ A Website To Watch HD Movies, Anime And TV Online For Free Using NextJS
  <summary>Home page</summary>
  <p>
   
-![home](https://github.com/lamhoang1256/netfilm/assets/61537853/ee7cecc6-c14a-40ea-89b0-ab2e17ff9aba)
+![home](https://raw.githubusercontent.com/lamhoang1256/netfilm/main/public/netfilm.png)
+
+ </p>
+</details>
+
+<details>
+ <summary>Watch page</summary>
+ <p>
+  
+![watch-page](https://raw.githubusercontent.com/lamhoang1256/netfilm/main/screenshots/v2/watch-page.png)
 
  </p>
 </details>
