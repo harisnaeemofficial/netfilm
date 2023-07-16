@@ -6,6 +6,7 @@ A Website To Watch HD Movies, Anime And TV Online For Free Using NextJS
 
 - Official website: https://netfilm.app
 - Author: Nguyễn Hoàng Lâm ( [@lamhoang1256](https://github.com/lamhoang1256) )
+- **Note: The source code above is the outdated old version**
 
 ## Preview
 
