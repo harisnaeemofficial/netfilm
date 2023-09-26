@@ -5,19 +5,20 @@ A Website To Watch HD Movies, Anime And TV Online For Free Using NextJS
 ## Overview
 
 - Official website: https://netfilm.app
-- Author: Nguyễn Hoàng Lâm ( [@lamhoang1256](https://github.com/lamhoang1256) )
 - **Note: The source code above is the outdated old version**
 
 ## Preview
 
-![homepage](https://raw.githubusercontent.com/lamhoang1256/netfilm/main/public/netfilm.png)
+![watchpage](https://github.com/lamhoang1256/netfilm/assets/61537853/f3cc9b97-89d9-4c44-b96c-fb6da52cd64b)
 
 ## Credits
 
 - Superstream: https://github.com/Blatzar/cloudstream-extensions/blob/master/SuperStream
-- Consumet API : https://github.com/consumet/consumet.ts (Flixhq, Gogoanime, Viewasian)
+- Consumet API : https://github.com/consumet/consumet.ts (Flixhq, Gogoanime, Zoro)
 - Kuramanime: https://github.com/LuckyIndraEfendi/AnimeIndo-Rest-API
-- Hexated: https://github.com/hexated/cloudstream-extensions-hexated (Kisskh, Phimmotchill)
+- Ophim API: https://ophim.hiephanhthienha.com
+- Hexated: https://github.com/hexated/cloudstream-extensions-hexated (Kisskh, SuperStream)
+- Video player design is heavily inspired by [Justchill](https://justchill.tv), [Movie-web](https://movie-web.app), [Netplayer](https://www.npmjs.com/package/netplayer), [React-tuby](https://react-tuby.vercel.app)
 
 ## Features
 
@@ -31,7 +32,6 @@ A Website To Watch HD Movies, Anime And TV Online For Free Using NextJS
 ## Main technology used
 
 - NextJS, Typescript, Taiwindcss
-- Player: custom from [netplayer](https://www.npmjs.com/package/netplayer), [react-tuby](https://react-tuby.vercel.app)
 
 ## Screenshots
 
@@ -39,17 +39,27 @@ A Website To Watch HD Movies, Anime And TV Online For Free Using NextJS
  <summary>Home page</summary>
  <p>
   
-![home](https://raw.githubusercontent.com/lamhoang1256/netfilm/main/public/netfilm.png)
+![homepage](https://github.com/lamhoang1256/netfilm/assets/61537853/752e042b-8fca-48af-876b-c22e041ba648)
 
  </p>
 </details>
 
 <details>
- <summary>Watch page</summary>
+ <summary>Details page</summary>
  <p>
   
-![watch-page](https://raw.githubusercontent.com/lamhoang1256/netfilm/main/screenshots/v2/watch-page.png)
+![watchpage](https://github.com/lamhoang1256/netfilm/assets/61537853/a30cdfba-01c1-4180-9cef-09fe78c295f5)
 
+ </p>
+</details>
+
+
+<details>
+ <summary>Player</summary>
+ <p>
+  
+  ![player](https://github.com/lamhoang1256/netfilm/assets/61537853/a7f2c319-92e8-451c-bfca-104fefca20f7)
+  
  </p>
 </details>
 
