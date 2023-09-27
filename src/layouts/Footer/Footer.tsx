@@ -10,9 +10,6 @@ const Footer = () => {
         <span>&copy; 2023</span>
         <div className={styles.footerContact}>
           <span> </span>
-          
-            
-          </a>
         </div>
       </div>
     </footer>
