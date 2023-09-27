@@ -8,6 +8,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "styles")]
   },
   images: { domains: ["images.weserv.nl", "img.rrmj.tv", "img.netpop.app", "img.rr.tv"] },
+  devtool: 'eval-source-map',
   async headers() {
     return [
       {
