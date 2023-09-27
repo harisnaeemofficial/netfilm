@@ -10,7 +10,7 @@ const Footer = () => {
         <span>Nguyen Hoang Lam &copy; 2022</span>
         <div className={styles.footerContact}>
           <span>Source code: </span>
-          <a target="_blank" rel="noopener noreferrer" href={PATH.projectGithub}>
+          <a target="_blank" rel="noopener noreferrer" href={//PATH.projectGithub}>
             <IconGithub />
           </a>
         </div>
