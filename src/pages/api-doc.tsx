@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async () => {
     apiFolder: "src/pages/api",
     definition: {
       openapi: "3.0.0",
-      servers: [{ url: `${server}/api` }, { url: `${process.env.NEXT_PUBLIC_LOCALHOST}/api` }],
+      servers: [{ url: `${process.env.NEXT_PUBLIC_SERVER}/api` }, { url: `${process.env.NEXT_PUBLIC_LOCALHOST}/api` }],
       info: {
         title: "NetFilm Api",
         version: "1.0.0",
