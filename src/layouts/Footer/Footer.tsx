@@ -7,11 +7,11 @@ const Footer = () => {
   return (
     <footer>
       <div className={classNames(styles.footer, "container")}>
-        <span>Nguyen Hoang Lam &copy; 2022</span>
+        <span>&copy; 2023</span>
         <div className={styles.footerContact}>
-          <span>Source code: </span>
-          <a target="_blank" rel="noopener noreferrer" href={//PATH.projectGithub}>
-            <IconGithub />
+          <span> </span>
+          <a target="_blank" rel="noopener noreferrer" href={}>
+            
           </a>
         </div>
       </div>
