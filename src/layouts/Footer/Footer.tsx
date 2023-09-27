@@ -10,7 +10,7 @@ const Footer = () => {
         <span>&copy; 2023</span>
         <div className={styles.footerContact}>
           <span> </span>
-          <a target="_blank" rel="noopener noreferrer" href={}>
+          
             
           </a>
         </div>
